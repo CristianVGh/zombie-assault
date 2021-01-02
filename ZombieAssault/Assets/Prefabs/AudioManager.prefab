@@ -1,0 +1,136 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4160849271847442503
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4160849271847442553}
+  - component: {fileID: 4160849271847442502}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4160849271847442553
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4160849271847442503}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4160849271847442502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4160849271847442503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11a9ffac3907b89409096e05090a4998, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: Gunshot
+    clip: {fileID: 8300000, guid: 6739c01659ad96d47987f4ddee226b36, type: 3}
+    volume: 0.636
+    loop: 0
+    spatialBlend: 0
+    source: {fileID: 0}
+  - name: Player_Hit
+    clip: {fileID: 8300000, guid: a37f44cbf8c2a7443a3c361efa2f233a, type: 3}
+    volume: 0.727
+    loop: 0
+    spatialBlend: 0.83
+    source: {fileID: 0}
+  - name: Reload
+    clip: {fileID: 8300000, guid: cef0fa03af5b747f0abe82cde0b2bccc, type: 3}
+    volume: 0.751
+    loop: 0
+    spatialBlend: 0.16
+    source: {fileID: 0}
+  - name: Empty_Clip
+    clip: {fileID: 8300000, guid: e7632c6401c09437e83de45d33c5858e, type: 3}
+    volume: 0.751
+    loop: 0
+    spatialBlend: 0.22
+    source: {fileID: 0}
+  - name: Zombie_Aware_1
+    clip: {fileID: 8300000, guid: 90054576c036ea44096d20cc89ff4da2, type: 3}
+    volume: 0.751
+    loop: 0
+    spatialBlend: 0.776
+    source: {fileID: 0}
+  - name: Zombie_Aware_2
+    clip: {fileID: 8300000, guid: 9f8a1e6741a342647b9c0055e1e0a7b8, type: 3}
+    volume: 0.751
+    loop: 0
+    spatialBlend: 0.776
+    source: {fileID: 0}
+  - name: Zombie_Aware_3
+    clip: {fileID: 8300000, guid: 5ce6bb262e363834db2b5cdef8a21155, type: 3}
+    volume: 0.751
+    loop: 0
+    spatialBlend: 0.776
+    source: {fileID: 0}
+  - name: Zombie_Aware_4
+    clip: {fileID: 8300000, guid: 821b6440d8e269c40b5a0eb8a44a079d, type: 3}
+    volume: 0.751
+    loop: 0
+    spatialBlend: 0.776
+    source: {fileID: 0}
+  - name: Zombie_Damaged_1
+    clip: {fileID: 8300000, guid: 8b9826c915109c446be0c38d54721a2d, type: 3}
+    volume: 0.751
+    loop: 0
+    spatialBlend: 0.776
+    source: {fileID: 0}
+  - name: Zombie_Damaged_2
+    clip: {fileID: 8300000, guid: 5cd921b91deac4f47b05c451951f7a53, type: 3}
+    volume: 0.751
+    loop: 0
+    spatialBlend: 0.776
+    source: {fileID: 0}
+  - name: Zombie_Damaged_3
+    clip: {fileID: 8300000, guid: 4fb45f9472f5e554c82a5a9c7ba4c739, type: 3}
+    volume: 0.751
+    loop: 0
+    spatialBlend: 0.776
+    source: {fileID: 0}
+  - name: Zombie_Death_1
+    clip: {fileID: 8300000, guid: fc1882cb9cb0d474c95537bbdb4c48bd, type: 3}
+    volume: 0.751
+    loop: 0
+    spatialBlend: 0.776
+    source: {fileID: 0}
+  - name: Zombie_Death_2
+    clip: {fileID: 8300000, guid: bdb798b20d5ac2f438f3a562f4150019, type: 3}
+    volume: 0.751
+    loop: 0
+    spatialBlend: 0.776
+    source: {fileID: 0}
+  - name: Zombie_Attack_1
+    clip: {fileID: 8300000, guid: 24b617db03a924c4ab49c13feb18c10d, type: 3}
+    volume: 0.751
+    loop: 0
+    spatialBlend: 0.776
+    source: {fileID: 0}
+  - name: Zombie_Attack_2
+    clip: {fileID: 8300000, guid: 83041cb4dc7766b48a4342db7511819d, type: 3}
+    volume: 0.751
+    loop: 0
+    spatialBlend: 0.776
+    source: {fileID: 0}
