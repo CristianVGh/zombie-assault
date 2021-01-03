@@ -74,6 +74,8 @@ MonoBehaviour:
   speed: 7
   damage: 10
   attackRate: 1.6
+  ammoPrefab: {fileID: 6380859086728382119, guid: 1821af0aca1dfd845a24ff7e2c9de797,
+    type: 3}
 --- !u!54 &7825836302780621775
 Rigidbody:
   m_ObjectHideFlags: 0

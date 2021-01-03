@@ -20,7 +20,7 @@ public class Gun : MonoBehaviour
 
     void Start()
     {
-        GameStats.instance.setLoadedAmmo(magazineSize);
+        GameStats.instance.SetLoadedAmmo(magazineSize);
     }
 
     void Update()
@@ -42,8 +42,8 @@ public class Gun : MonoBehaviour
 
     IEnumerator Reload()
     {
-        int ammunition = GameStats.instance.getAmmo();
-        int loadedAmmo = GameStats.instance.getLoadedAmmo();
+        int ammunition = GameStats.instance.GetAmmo();
+        int loadedAmmo = GameStats.instance.GetLoadedAmmo();
         if( ammunition > 0  && loadedAmmo < magazineSize)
         {
             isReloading = true;
@@ -63,8 +63,8 @@ public class Gun : MonoBehaviour
                 ammunition = 0;
             }
             isReloading = false;
-            GameStats.instance.setAmmo(ammunition);
-            GameStats.instance.setLoadedAmmo(loadedAmmo);
+            GameStats.instance.SetAmmo(ammunition);
+            GameStats.instance.SetLoadedAmmo(loadedAmmo);
 
         } else 
         {
@@ -75,14 +75,14 @@ public class Gun : MonoBehaviour
     
     public void Shoot()
     {
-        int loadedAmmo = GameStats.instance.getLoadedAmmo();
+        int loadedAmmo = GameStats.instance.GetLoadedAmmo();
         if(loadedAmmo <= 0) 
         {
             AudioManager.instance.Play("Empty_Clip");
             return;
         }
         loadedAmmo--;
-        GameStats.instance.setLoadedAmmo(loadedAmmo);
+        GameStats.instance.SetLoadedAmmo(loadedAmmo);
         muzzleFlash.Play();
         RaycastHit hit;
 
@@ -95,6 +95,10 @@ public class Gun : MonoBehaviour
             {
                 zombieController.TakeDamage(damage);
                 Debug.Log("We hit " + hit.collider.name + " for " + damage + " damage") ;
+                GameStats.instance.GivePoints(100);
+            } else
+            {
+                GameStats.instance.TakePoints(50);
             }
             
         }

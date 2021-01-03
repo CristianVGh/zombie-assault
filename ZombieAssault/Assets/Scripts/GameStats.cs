@@ -10,10 +10,12 @@ public class GameStats : MonoBehaviour
     public static int playerHealth = 100;
     public static int totalAmmo = 40;
     public static int loadedAmmo = 7;
+    private int score;
 
     public HealthBar healthBar;
 
     public Text ammoText;
+    public Text scoreText;
 
     void Awake()
     {
@@ -31,57 +33,71 @@ public class GameStats : MonoBehaviour
     void Start()
     {
         healthBar.SetMaxHealth(playerHealth);
+        score = 0;
+        scoreText.text = score + "";
     }
 
     public void damagePlayer (int damage)
     {
         playerHealth -= damage;
-        updateHealthBar();
+        UpdateHealthBar();
     }
 
-    public void addAmmo (int ammo)
+    public void AddAmmo (int ammo)
     {
         totalAmmo += ammo;
-        updateAmmoView();
+        UpdateAmmoView();
     }
 
-    public int getAmmo ()
+    public int GetAmmo ()
     {
         return totalAmmo;
     }
 
-    public void setAmmo (int ammo) 
+    public void SetAmmo (int ammo) 
     {
         totalAmmo = ammo;
-        updateAmmoView();
+        UpdateAmmoView();
     }
 
-    public void updateHealthBar ()
+    public void UpdateHealthBar ()
     {
         healthBar.SetHealth(playerHealth);
     }
 
-    public void setLoadedAmmo(int ammo)
+    public void SetLoadedAmmo(int ammo)
     {
         loadedAmmo = ammo;
-        updateAmmoView();
+        UpdateAmmoView();
     }
 
-    public int getLoadedAmmo()
+    public int GetLoadedAmmo()
     {
         return loadedAmmo;
     }
 
-    public void updateAmmoView()
+    public void UpdateAmmoView()
     {
         ammoText.text = loadedAmmo + "/" + totalAmmo; 
+    }
+
+    public void GivePoints(int points)
+    {
+        score += points;
+        scoreText.text = score + "";
+    }
+
+    public void TakePoints(int points)
+    {
+        score -= points;
+        scoreText.text = score + "";
     }
     void Update ()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
             playerHealth -= 10;
-            updateHealthBar();
+            UpdateHealthBar();
         }
 
     }

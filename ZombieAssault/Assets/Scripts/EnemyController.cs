@@ -18,7 +18,8 @@ public class EnemyController : MonoBehaviour
     Transform playerLocation;
     NavMeshAgent agent;
     Animator animator;
-  
+
+    public GameObject ammoPrefab;
     void Start()
     {
         playerLocation = PlayerManager.instance.player.transform;
@@ -56,7 +57,7 @@ public class EnemyController : MonoBehaviour
                     animator.SetTrigger("Attack");
                     AudioManager.instance.Play("Player_Hit");
                     GameStats.instance.damagePlayer(damage);
-                    Debug.Log("Atack");
+                    GameStats.instance.TakePoints(100);
                 }
             
             } else
@@ -93,6 +94,10 @@ public class EnemyController : MonoBehaviour
         agent.speed = 0;
         isAlive = false;
         
+        GameObject ammo = Instantiate(ammoPrefab) as GameObject;
+        ammo.transform.position = this.transform.position;
+
+
         Destroy(gameObject, 5f);
     }
 
