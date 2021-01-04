@@ -69,11 +69,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 496e5ad45b1a54048bd6fa79b2ecbacd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lookRadius: 10
-  health: 100
-  speed: 7
+  lookRadius: 50
+  health: 1000
+  speed: 12
   damage: 30
   attackRate: 2
+  attackRange: 4
+  ammoPrefab: {fileID: 6380859086728382119, guid: 1821af0aca1dfd845a24ff7e2c9de797,
+    type: 3}
 --- !u!54 &8191819376938988989
 Rigidbody:
   m_ObjectHideFlags: 0

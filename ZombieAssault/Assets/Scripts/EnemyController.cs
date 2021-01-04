@@ -14,6 +14,7 @@ public class EnemyController : MonoBehaviour
 
     private float nextTimeToAttack = 0f;
     public float attackRate;
+    public float attackRange;
 
     Transform playerLocation;
     NavMeshAgent agent;
@@ -51,12 +52,12 @@ public class EnemyController : MonoBehaviour
                     FaceTarget();
                 }
 
-                if(distance <= 1f && Time.time > nextTimeToAttack) 
+                if(distance <= attackRange && Time.time > nextTimeToAttack) 
                 {
                     nextTimeToAttack = Time.time + attackRate;
                     animator.SetTrigger("Attack");
                     AudioManager.instance.Play("Player_Hit");
-                    GameStats.instance.damagePlayer(damage);
+                    GameStats.instance.DamagePlayer(damage);
                     GameStats.instance.TakePoints(100);
                 }
             
