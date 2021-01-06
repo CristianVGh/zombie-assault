@@ -84,6 +84,10 @@ public class EnemyController : MonoBehaviour
         if(health <= 0)
         {
             Die();
+            if(this.transform.tag == "Zombie Boss")
+            {
+                GameStats.instance.WinGame();
+            }
         }
     }
 

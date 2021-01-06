@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameStats : MonoBehaviour
 {
@@ -16,6 +17,9 @@ public class GameStats : MonoBehaviour
 
     public Text ammoText;
     public Text scoreText;
+
+    public GameObject endGameUI;
+    public GameObject winUI;
 
     void Awake()
     {
@@ -94,11 +98,39 @@ public class GameStats : MonoBehaviour
     }
     void Update ()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (playerHealth <= 0)
         {
-            playerHealth -= 10;
-            UpdateHealthBar();
+            EndGame();
         }
 
+    }
+
+    void EndGame()
+    {
+        endGameUI.SetActive(true);
+        Time.timeScale = 0f;
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            RestartGame();
+        }
+    }
+
+    public void RestartGame()
+    {
+        endGameUI.SetActive(false);
+        SceneManager.LoadScene("Level 1");
+        AudioManager.instance.Stop("Level_1_Music");
+        AudioManager.instance.Stop("Level_2_Music");
+        AudioManager.instance.Play("Level_1_Music");
+        playerHealth = 100;
+        totalAmmo = 40;
+        loadedAmmo = 7;
+        Time.timeScale = 1f;
+        UpdateHealthBar();
+    }
+
+    public void WinGame()
+    {
+        winUI.SetActive(true);
     }
 }

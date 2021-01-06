@@ -69,7 +69,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 496e5ad45b1a54048bd6fa79b2ecbacd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lookRadius: 15
+  lookRadius: 25
   health: 100
   speed: 7
   damage: 10

@@ -12,9 +12,8 @@ public class Ammunition : MonoBehaviour
     {
         if(collider.gameObject.tag == "Player")
         {
-            Debug.Log("Picked up bullets");
             Destroy(gameObject);
-            int random = Random.Range(2, 5);
+            int random = Random.Range(3, 6);
             GameStats.instance.AddAmmo(random);
         }
     }   
