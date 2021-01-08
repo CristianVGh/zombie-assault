@@ -4235,7 +4235,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Press Space to return to Restart
+  m_Text: Press Space to Restart
 --- !u!222 &663772970
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -2,12 +2,14 @@ using UnityEngine;
 using UnityEngine.Audio;
 using System;
 
+//gestioneaza fisierele audio
 public class AudioManager : MonoBehaviour
 {
     public Sound[] sounds;
     public static AudioManager instance;
     void Awake()
     {
+        //ne asiguram ca obiectul ramane cand schimbam niveiul
         if(instance == null)
             instance = this;
         else
@@ -15,17 +17,19 @@ public class AudioManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-        
         DontDestroyOnLoad(gameObject);
+         Debug.Log("AUdI START");
+        //atribuie proprietati fisierului audio (volum, repetabil sau nu, locul de unde sa se auda sonorul >> 3D sau 2D)
+        //proprietatile sunt luate din obiectul AudioManager din fisierul prefabs, fiecare efect sonor poate fi ajustat de acolo
         foreach (Sound s in sounds)
         {
             s.source = gameObject.AddComponent<AudioSource>();
             s.source.clip = s.clip;
-            Debug.Log(s.name + " ");
 
             s.source.volume = s.volume;
             s.source.loop = s.loop;
             s.source.spatialBlend = s.spatialBlend;
+           
         }
     }
 
