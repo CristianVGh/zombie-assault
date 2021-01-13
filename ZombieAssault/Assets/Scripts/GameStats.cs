@@ -18,6 +18,7 @@ public class GameStats : MonoBehaviour
 
     public Text ammoText;
     public Text scoreText;
+    public Text finalScoreText;
 
     public GameObject endGameUI;
     public GameObject winUI;
@@ -139,5 +140,6 @@ public class GameStats : MonoBehaviour
     public void WinGame()
     {
         winUI.SetActive(true); //afiseaza ecranul de final de joc
+        finalScoreText.text = "Final Score: " + score;
     }
 }
